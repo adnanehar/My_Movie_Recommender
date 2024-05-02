@@ -47,6 +47,11 @@ Cosine similarity is a metric used to measure how similar the documents are irre
 4. [List of movies in 2019](https://en.wikipedia.org/wiki/List_of_American_films_of_2019)
 5. # [List of movies in 2020](https://en.wikipedia.org/wiki/List_of_American_films_of_2020)
 
+## The APP
+<img width="960" alt="app" src="https://github.com/adnanehar/My_Movie_Recommender/assets/140387810/5d058031-4d7f-48a5-b4c4-b13ec23e975c">
+
+<img width="960" alt="app1" src="https://github.com/adnanehar/My_Movie_Recommender/assets/140387810/c151d895-83cc-4f85-86f5-7940931742cd">
+
 
 ### ML System Architecture for Movie Recommendation System
 
