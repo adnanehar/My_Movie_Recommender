@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-# Movie-Recommender-System-with-sentiment-analysis-using-AJAX
+# Movie-Recommender-System
 
 ![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
 ![Framework](https://img.shields.io/badge/Framework-Flask-red)
@@ -109,46 +106,140 @@ Cloud platforms like AWS, GCP, or Azure for model deployment and scalability.
 | ARCHITECTURE |
 +----------------------+ +----------------------+ |
 | | | | |
-| Data Collection +-------->+ Data Preprocessing +--+->+
-| (Tweets & Articles) | | (ZenML Pipeline) | | |
-| Storage : Local/HDFS| | | | |
-+-----------+----------+ +-----------+----------+ | |
-^ | | |
-| | | |
-| v | |
-| +----------------------+ | |
-| | | | |
-+----------> Model Training , <------------+ |
-| Validation & Testing | |
-| (Hugging Face | |
-| Transformers, ZenML, | |
-| Pytest) | |
-| | |
-+----------------------+ |
+| Data Collection +---->+ Data Preprocessing +--+----->+ |
+| (Tweets & Articles) | | (ZenML Pipeline) | | | |
+| Storage: Local/HDFS | | | | | |
++-----------+----------+ +-----------+---------+ | | |
+^ | | | | |
+| v v | | |
+| +----------------------+ +----------------------+ | | |
+| | | | | | | |
+| | Model Training , | | Model Serving | | | |
+| | Validation & Testing | | (FastAPI, Flask) | | | |
+| | (Hugging Face | | | | | |
+| | Transformers, ZenML, | | Docker Container | | | |
+| | Pytest) | | (Deployment & Run) | | | |
+| | | | | | | |
+| +----------------------+ +----------------------+ | | |
+| | | | | |
+| v | | | |
+| +---------------------+ | | | |
+| | Frontend | | | | |
+| | Interaction | | | | |
+| | (User inputs, | | | | |
+| | Display results) | | | | |
+| | | | | | |
++---------------------+------------+-----------------+ | |
+^ |
 | |
-v |
-+---------------------+---------------------+ |
-| | | |
-| Model Serving | Docker Container <--------+
-| (FastAPI, Flask) | (Deployment & Run) |
-| | |
-+----------+----------+---------------------+
-|
-v
-+-----------+---------+
-| |
-| Frontend |
-| Interaction |
-| (User inputs, |
-| Display results) |
-| |
-+---------------------+
-
-+---------------+  
-| | Storage |  
-| | (Local Machine)|  
-| +---------------+
++---------------+ | |
+| | Storage | |
+| | (Local Machine) | |
+| +----------------------+ |
++---------------------------------------------------------+
 
 ## Conclusion:
 
 The ML system architecture described above outlines the key components and technologies involved in building a movie recommendation system. By leveraging machine learning techniques and data-driven approaches, the system can deliver personalized recommendations to users, enhancing their movie-watching experience.
+
+### Technologies Used
+
+## Flask (v2.3.2)
+
+Flask is a micro web framework for Python that allows developers to quickly build web applications. It provides a simple and flexible architecture, making it easy to get started with web development. Flask is used as the core framework for building the web application and handling HTTP requests.
+
+## Gunicorn (v19.9.0)
+
+Gunicorn is a Python WSGI HTTP server for Unix. It acts as a reverse proxy server, handling incoming HTTP requests and forwarding them to the Flask application. Gunicorn is used to deploy the Flask application in production environments, providing improved performance and scalability.
+
+## Jinja2
+
+Jinja2 is a modern and designer-friendly templating engine for Python. It is used in conjunction with Flask for rendering HTML templates and generating dynamic content in the web application. Jinja2 allows developers to create reusable templates and easily inject data into HTML pages.
+
+## MarkupSafe (>=2.0)
+
+MarkupSafe is a dependency of Jinja2 that provides HTML markup string escaping and manipulation utilities. It ensures that user input is properly escaped to prevent XSS (cross-site scripting) attacks and other security vulnerabilities.
+
+## Werkzeug (>=2.3.3)
+
+Werkzeug is a WSGI utility library for Python that provides various components for building web applications. It is used by Flask internally for handling HTTP requests and responses, routing, and other web-related tasks.
+
+## numpy (>=1.9.2)
+
+NumPy is a powerful library for numerical computing in Python. It provides support for multidimensional arrays, mathematical functions, linear algebra, and random number generation. NumPy is used in the application for data manipulation and numerical operations.
+
+## scipy (>=0.15.1)
+
+SciPy is a scientific computing library for Python that builds on top of NumPy. It provides additional functionality for optimization, integration, interpolation, signal processing, and other scientific computing tasks. SciPy is used in the application for advanced mathematical and scientific computations.
+
+## nltk (v3.5)
+
+NLTK (Natural Language Toolkit) is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources, such as WordNet. NLTK is used in the application for natural language processing tasks, such as text tokenization and sentiment analysis.
+
+## scikit-learn (>=0.18)
+
+scikit-learn is a popular machine learning library for Python that provides simple and efficient tools for data mining and data analysis. It features various algorithms for classification, regression, clustering, dimensionality reduction, and more. scikit-learn is used in the application for building machine learning models and performing movie recommendations based on user input.
+
+## pandas (>=0.19)
+
+pandas is a fast, powerful, and flexible data analysis and manipulation library for Python. It provides data structures and functions for working with structured data, such as data frames and series. pandas is used in the application for data preprocessing, manipulation, and analysis.
+
+## beautifulsoup4 (v4.9.1)
+
+Beautiful Soup is a Python library for pulling data out of HTML and XML files. It provides a simple interface for navigating and searching HTML documents, making it easy to extract data from web pages. Beautiful Soup is used in the application for web scraping and extracting movie information from external sources.
+
+## jsonschema (v3.2.0)
+
+jsonschema is a Python library for validating JSON data against a JSON schema. It provides tools for defining and validating JSON schemas, ensuring that JSON data adheres to a specified structure and format. jsonschema is used in the application for validating and verifying JSON data received from external APIs.
+
+## tmdbv3api (v1.6.1)
+
+tmdbv3api is a Python wrapper for The Movie Database (TMDb) API v3. It provides convenient access to TMDb's vast collection of movie data, including movie details, images, trailers, and more. tmdbv3api is used in the application for fetching movie information and metadata from TMDb.
+
+## lxml (v5.2.1)
+
+lxml is a Python library for processing XML and HTML documents. It provides a fast and efficient parser for navigating and manipulating XML/HTML trees. lxml is used in the application for parsing and processing HTML documents during web scraping and data extraction.
+
+## urllib3 (>=1.21.1,<1.26)
+
+urllib3 is a powerful HTTP client for Python that provides features such as connection pooling, SSL/TLS support, and thread safety. It is used in the application for making HTTP requests to external APIs and fetching data from remote servers.
+
+## requests (v2.23.0)
+
+Requests is a simple and elegant HTTP library for Python that allows developers to send HTTP requests and handle responses easily. It provides a high-level interface for making HTTP requests with various HTTP methods, headers, and parameters. Requests is used in the application for sending HTTP requests to external APIs and fetching data from web servers.
+
+## pickleshare (v0.7.5)
+
+pickleshare is a small Python library for persistent storage of Python objects using pickle serialization. It provides a simple interface for storing and retrieving Python objects as files on disk. pickleshare is used in the application for caching and storing machine learning models and other serialized data objects.
+
+## Great Expectations
+
+Great Expectations is an open-source library for validating, documenting, and profiling data. It provides a suite of tools and utilities for defining and enforcing data quality expectations, ensuring that data pipelines and processes produce reliable and trustworthy results.
+
+# Why I Used It
+
+Great Expectations was integrated into the data processing pipeline to define and enforce data quality expectations. By specifying data quality rules and constraints, Great Expectations helped ensure the integrity and consistency of the data used for training machine learning models and making recommendations. Additionally, Great Expectations provided automated data validation and documentation, facilitating transparency and reproducibility in the data pipeline.
+
+## ZenML
+
+ZenML is an open-source MLOps framework for building, running, and managing machine learning pipelines. It provides a high-level abstraction for defining and orchestrating end-to-end machine learning workflows, including data preprocessing, model training, evaluation, and deployment.
+
+# Why I Used It
+
+ZenML was utilized to streamline and automate the machine learning pipeline, from data ingestion to model deployment. Its modular and extensible architecture allowed for easy integration with existing tools and libraries, such as scikit-learn and TensorFlow. By using ZenML, I was able to abstract away the complexities of managing machine learning pipelines and focus on developing and iterating on machine learning models more efficiently.
+
+## MLflow
+
+MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. It provides tools and utilities for experiment tracking, model packaging, deployment, and model management. MLflow enables organizations to track experiments, reproduce results, and deploy models to production with ease.
+
+# Why I Used It
+
+MLflow was employed for experiment tracking and model management throughout the machine learning lifecycle. By logging parameters, metrics, and artifacts during model training and evaluation, MLflow facilitated reproducibility and collaboration among team members. Additionally, MLflow's model packaging and deployment capabilities streamlined the process of deploying trained models to production environments, ensuring consistency and reliability in model deployments.
+
+## Docker
+
+Docker is a containerization platform that allows developers to package applications and dependencies into lightweight, portable containers. Containers encapsulate the application and its dependencies, ensuring consistency and reproducibility across different environments.
+
+# Why I Used It
+
+Docker was utilized to containerize the web application and its dependencies, including the Flask application, machine learning models, and external libraries. By containerizing the application, I was able to create a consistent and isolated environment for running the application, regardless of the underlying infrastructure. Docker also facilitated deployment and scaling of the application, making it easier to manage and maintain in production environments.

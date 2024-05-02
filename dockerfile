@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT=8080
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
