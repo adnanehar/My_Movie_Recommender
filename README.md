@@ -11,7 +11,7 @@ The details of the movies(title, genre, runtime, rating, poster, etc) are fetche
 
 ## Motivation:
 
-The motivation behind the Content-Based Movie Roulette System with Sentiment Analysis using AJAX is to create a sophisticated recommendation system for movie enthusiasts that goes beyond traditional approaches. By leveraging content-based filtering techniques and sentiment analysis, the system aims to provide personalized movie recommendations tailored to individual preferences while also considering the sentiment expressed by users in their feedback. The integration of AJAX (Asynchronous JavaScript and XML) technology enhances the user experience by enabling seamless, asynchronous communication between the client and server, resulting in faster and more responsive interactions.
+The motivation behind the Content-Based Movie Roulette System is to create a sophisticated recommendation system for movie enthusiasts that goes beyond traditional approaches. By leveraging content-based filtering techniques and sentiment analysis, the system aims to provide personalized movie recommendations tailored to individual preferences while also considering the sentiment expressed by users in their feedback. The integration of AJAX (Asynchronous JavaScript and XML) technology enhances the user experience by enabling seamless, asynchronous communication between the client and server, resulting in faster and more responsive interactions.
 
 # Business Value:
 
